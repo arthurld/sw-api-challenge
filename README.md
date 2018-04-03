@@ -1,13 +1,13 @@
 # How To Run
 
-## Installing
+## Installing Dependencies
+
 > npm install
+
 ## Development
 
 > npm start
 
-## Test
-> npm run test
-
 ## Production
+
 > npm run build
