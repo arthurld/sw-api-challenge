@@ -26,6 +26,15 @@ const Film = (props) => (
                 <button>Listar Personagens</button>
             </div>
         </div>
+        <div className="dropdown">
+            <div className="block">
+                <b>Planetas presentes neste filme:</b>
+                <ul>
+                    <li>Tatooine</li>
+                    <li>Yavin IV</li>
+                </ul>
+            </div>
+        </div>
     </div>
 )
 

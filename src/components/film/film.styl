@@ -1,12 +1,14 @@
 .film
     width 100%
+    display flex
+    flex-direction column
+    border-bottom 1px solid #333
+    padding 20px 30px
 
     .film-info
         display flex
-        padding 20px 30px
         align-items center
         justify-content space-between
-        border-bottom 1px solid #333
 
         .info
             display flex
@@ -14,6 +16,7 @@
 
             b
                 font-size 16px
+                font-weight 700
                 color #E5D200
 
             span
@@ -35,3 +38,40 @@
 
                 + button
                     margin-top 5px
+
+    .dropdown
+        overflow hidden
+        height 0
+        transition .4s height ease
+
+        .block
+            width 100%
+            display flex
+            flex-direction column
+            align-items flex-start
+            margin-top 15px
+
+            b
+                color #E5D200
+                font-weight 700
+
+            ul
+                margin-top 10px
+
+                li
+                    font-size 14px
+                    color #f0f0f0
+                    display flex
+                    align-items center
+
+                    &:before
+                        content ''
+                        width 7px
+                        height 7px
+                        border-radius 50%
+                        background #f0f0f0
+                        margin-right 10px
+
+                    + li
+                        margin-top 7px
+
