@@ -34,14 +34,14 @@ class Home extends Component {
                 <div className='list-films'>
                     {
                         this.state.isFetching ? <div className="loader" />
-                            : this.state.films.map((film, index) =>
+                            : this.state.films.length > 0 ? this.state.films.map((film, index) =>
                                 <Film key={index} title={`Star Wars: ${film.title}`}
                                     director={film.director}
                                     producer={film.producer}
                                     releaseDate={this.convertDate(film.release_date)}
                                     planets={film.planets}
                                     characters={film.characters} />
-                            )
+                            ) : <p>Nenhum filme encontrado.</p>
                     }
                 </div>
             </div>
