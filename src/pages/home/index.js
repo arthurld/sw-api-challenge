@@ -38,7 +38,9 @@ class Home extends Component {
                                 <Film key={index} title={`Star Wars: ${film.title}`}
                                     director={film.director}
                                     producer={film.producer}
-                                    releaseDate={this.convertDate(film.release_date)} />
+                                    releaseDate={this.convertDate(film.release_date)}
+                                    planets={film.planets}
+                                    characters={film.characters} />
                             )
                     }
                 </div>
