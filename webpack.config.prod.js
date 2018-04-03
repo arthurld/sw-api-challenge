@@ -19,7 +19,7 @@ const config = {
                 enforce: 'pre',
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
-                loader: 'standard-loader'
+                loader: 'eslint-loader'
             },
             {
                 test: /\.jsx?$/,
@@ -72,12 +72,6 @@ const config = {
                 'NODE_ENV': 'production'
             }
         }),
-        new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            }
-        }),
-        new webpack.optimize.OccurrenceOrderPlugin(),
         new HtmlPlugin({
             title: 'SW API Challenge',
             template: path.join(__dirname, 'src', 'template.html')
