@@ -6,9 +6,11 @@
     padding 20px 30px
 
     .film-info
-        display flex
-        align-items center
+        display grid
+        grid-template-columns repeat(auto-fit, 220px)
         justify-content space-between
+        grid-gap 30px
+        align-items center
 
         .info
             display flex

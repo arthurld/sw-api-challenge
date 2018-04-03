@@ -1,23 +1,46 @@
 import React, { Component } from 'react'
 import './home.styl'
 import Film from '../../components/film'
+import Header from '../../components/header'
 
 class Home extends Component {
-    // constructor () {
-    //     super()
-    //     this.state = {
-    //         films: {},
-    //         isFetching: true
-    //     }
-    // }
+    constructor () {
+        super()
+        this.state = {
+            films: [],
+            isFetching: true
+        }
+
+        this.fetchFilms()
+    }
+
+    fetchFilms () {
+        fetch('https://swapi.co/api/films')
+            .then(req => req.json())
+            .then(res => {
+                let results = res.results
+                results = results.sort((a, b) => a.episode_id < b.episode_id ? -1 : a.episode_id > b.episode_id ? 1 : 0)
+                this.setState({ films: results, isFetching: false })
+            })
+    }
+
+    convertDate (date) {
+        return date.split('-').reverse().join('/')
+    }
     render () {
         return (
             <div className='home-page'>
+                <Header />
                 <div className='list-films'>
-                    <Film title='Star Wars: A New Hope'
-                        director='George Lucas'
-                        producer='Gary Kurtz, Rick McCallum'
-                        releaseDate='1977-05-25'/>
+                    {
+                        this.state.isFetching ? <div className="loader" />
+                            : this.state.films.map((film, index) =>
+                                <Film key={index} title={`Star Wars: ${film.title}`}
+                                    director={film.director}
+                                    producer={film.producer}
+                                    releaseDate={this.convertDate(film.release_date)} />
+                            )
+                    }
                 </div>
             </div>
         )
