@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import Home from './pages/home'
 import { AppContainer } from 'react-hot-loader'
 import './reset.styl'
+import './fonts.styl'
 
 const render = Component => {
     ReactDOM.render(
